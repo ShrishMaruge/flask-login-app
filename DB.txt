@@ -1,0 +1,6 @@
+create database Login;
+
+create table register(
+  username varchar(30) primary key,
+  password varchar(30)
+);

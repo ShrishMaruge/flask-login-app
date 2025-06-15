@@ -1,0 +1,5 @@
+Flask==2.3.2
+mysql-connector-python==8.3.0
+Werkzeug==2.3.7
+Flask-WTF==1.1.1         # For secure forms with CSRF protection
+python-dotenv==1.0.1     # To load secrets from a .env file

@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+
+    <!-- Welcome Card -->
+    <div class="card shadow-lg border-0 mb-4 animate__animated animate__fadeIn">
+        <div class="card-body text-center">
+            <i class="fas fa-user-circle fa-5x text-primary mb-3"></i>
+            <h2 class="fw-bold">Welcome, {{ user }}!</h2>
+            <p class="text-muted">You're successfully logged in to your dashboard.</p>
+            <div class="d-flex justify-content-center gap-3 mt-3">
+                <a href="#" class="btn btn-outline-primary"><i class="fas fa-user-edit me-1"></i> Edit Profile</a>
+                <a href="#" class="btn btn-outline-secondary"><i class="fas fa-cogs me-1"></i> Account Settings</a>
+                <a href="{{ url_for('logout') }}" class="btn btn-danger"><i class="fas fa-sign-out-alt me-1"></i> Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Dashboard Overview -->
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm h-100 border-0">
+                <div class="card-body">
+                    <i class="fas fa-chart-line fa-2x text-success mb-2"></i>
+                    <h5 class="card-title">Your Activity</h5>
+                    <p class="card-text text-muted">Track login frequency, interactions, and recent actions.</p>
+                    <a href="#" class="btn btn-sm btn-outline-success">View Logs</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm h-100 border-0">
+                <div class="card-body">
+                    <i class="fas fa-bell fa-2x text-warning mb-2"></i>
+                    <h5 class="card-title">Notifications</h5>
+                    <p class="card-text text-muted">Stay updated with system alerts and messages.</p>
+                    <a href="#" class="btn btn-sm btn-outline-warning">Check Now</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card text-center shadow-sm h-100 border-0">
+                <div class="card-body">
+                    <i class="fas fa-users fa-2x text-info mb-2"></i>
+                    <h5 class="card-title">Community</h5>
+                    <p class="card-text text-muted">Connect with others using the platform and share ideas.</p>
+                    <a href="#" class="btn btn-sm btn-outline-info">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
