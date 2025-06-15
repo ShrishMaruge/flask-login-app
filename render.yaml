@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: flask-login-app
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn app:app
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: MYSQL_HOST
+        value: sql12.freemysqlhosting.net
+      - key: MYSQL_USER
+        value: root
+      - key: MYSQL_PASSWORD
+        value: root
+      - key: MYSQL_DB
+        value: Login
+      - key: SECRET_KEY
+        value: ec7839888dd7e02edaca9ed34977c788
