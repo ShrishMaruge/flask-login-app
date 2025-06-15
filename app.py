@@ -1,19 +1,19 @@
 from flask import Flask, render_template, request, redirect, url_for, session, flash
 from werkzeug.security import generate_password_hash, check_password_hash
 import mysql.connector
+import os
 
 app = Flask(__name__)
-app.secret_key = "supersecretkey"
+app.secret_key = os.environ.get("SECRET_KEY", "fallbacksecret")
 
 # MySQL database connection
 def get_db_connection():
     return mysql.connector.connect(
-        host="localhost",
-        user="root",           # Replace with your MySQL username
-        password="root",           # Replace with your MySQL password
-        database="Login"
+        host=os.environ.get("MYSQL_HOST"),
+        user=os.environ.get("MYSQL_USER"),
+        password=os.environ.get("MYSQL_PASSWORD"),
+        database=os.environ.get("MYSQL_DB")
     )
-
 @app.route("/")
 def home():
     if "user" in session:
